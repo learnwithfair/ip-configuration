@@ -22,5 +22,5 @@ Thanks for visiting my GitHub account!
 |   |   |
 |:---:|:---:|
 |Primary|Intemediate|
-|![Primary](https://github.com/learnwithfair/voiceToFace/blob/main/screenshot/home.png)|![Intemediate](https://github.com/learnwithfair/voiceToFace/blob/main/screenshot/face.png)|
+|![Primary](https://github.com/learnwithfair/ip-configuration/blob/main/screenshot/primary.jpg)|![Intemediate](https://github.com/learnwithfair/ip-configuration/blob/main/screenshot/intermediate.jpeg)|
 
