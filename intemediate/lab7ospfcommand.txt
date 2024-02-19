@@ -1,0 +1,23 @@
+//router configure for each router just change ip connect
+en
+conf t
+int Gig0/0
+ip address 192.168.30.2 255.255.255.0
+no shutdown
+exit
+int Gig0/1
+ip address 192.168.20.2 255.255.255.0
+no shutdown
+exit
+int Gig0/2
+ip address 192.168.10.1 255.255.255.0
+no shutdown
+exit
+
+//ospf connection each router  with wildcard mask ,,max - min subnet
+
+conf t
+router ospf 3
+network 192.168.30.0 0.0.0.255 area 0
+network 192.168.20.0 0.0.0.255 area 0
+network 192.168.10.0 0.0.0.255 area 0

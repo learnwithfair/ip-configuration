@@ -1,0 +1,100 @@
+ 
+*** PUST Router Configuration
+enable
+configure t
+hostname PUST 
+interface ethernet 0/1/0 
+ip address 192.168.10.1 255.255.255.0 
+no shutdown
+exit 
+interface ethernet 0/2/0 
+ip address 192.168.20.1 255.255.255.0 
+no shutdown
+exit 
+interface ethernet 0/3/0 
+ip address 192.168.30.1 255.255.255.0 
+no shutdown
+exit 
+interface fastEthernet 0/0
+ip address 192.168.40.1 255.255.255.0 
+no shutdown
+exit 
+ip route 192.168.50.0 255.255.255.0 192.168.40.2
+ip route 192.168.60.0 255.255.255.0 192.168.40.2
+ip route 192.168.80.0 255.255.255.0 192.168.40.2
+ip route 192.168.90.0 255.255.255.0 192.168.40.2
+ip route 192.168.100.0 255.255.255.0 192.168.40.2
+ip route 192.168.70.0 255.255.255.0 192.168.40.2
+exit 
+wr
+
+
+ 
+*** SUST Router Configuration
+enable
+configure terminal 
+hostname SUST 
+interface fastEthernet 0/0
+ip address 192.168.40.2 255.255.255.0 
+no shutdown
+exit 
+interface ethernet 0/1/0 
+ip address 192.168.50.1 255.255.255.0 
+no shutdown
+exit 
+interface ethernet 0/2/0 
+ip address 192.168.60.1 255.255.255.0 
+no shutdown
+exit 
+interface fastEthernet 0/1
+ip address 192.168.70.1 255.255.255.0 
+no shutdown
+exit 
+ip route 192.168.10.0 255.255.255.0 192.168.40.1
+ip route 192.168.20.0 255.255.255.0 192.168.40.1
+ip route 192.168.30.0 255.255.255.0 192.168.40.1
+ip route 192.168.80.0 255.255.255.0 192.168.70.2
+ip route 192.168.90.0 255.255.255.0 192.168.70.2
+ip route 192.168.100.0 255.255.255.0 192.168.70.2
+exit
+wr
+
+
+
+*** JUST Router Configuration
+
+enable
+configure terminal 
+hostname JUST 
+interface ethernet 0/1/0 
+ip address 192.168.80.1 255.255.255.0 
+no shutdown
+exit 
+interface ethernet 0/2/0 
+ip address 192.168.90.1 255.255.255.0 
+no shutdown
+exit 
+interface ethernet 0/3/0 
+ip address 192.168.100.1 255.255.255.0 
+no shutdown
+exit  
+interface fastEthernet 0/1
+ip address 192.168.70.2 255.255.255.0 
+no shutdown
+exit 
+ip route 192.168.50.0 255.255.255.0 192.168.70.1
+ip route 192.168.60.0 255.255.255.0 192.168.70.1
+ip route 192.168.10.0 255.255.255.0 192.168.70.1
+ip route 192.168.20.0 255.255.255.0 192.168.70.1
+ip route 192.168.30.0 255.255.255.0 192.168.70.1
+ip route 192.168.40.0 255.255.255.0 192.168.70.1
+exit
+wr
+*************************
+
+** STATIC CONFIGURATION
+en
+conf t
+ip route 192.168.50.0 255.255.255.0 192.168.40.2
+ip route 192.168.60.0 255.255.255.0 192.168.40.2
+ip route 192.168.70.0 255.255.255.0 192.168.40.2

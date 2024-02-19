@@ -1,0 +1,22 @@
+en
+conf t
+int Gig0/0
+ip address 192.168.60.2 255.255.255.0
+no shutdown
+exit
+int Gig0/1
+ip address 192.168.40.2 255.255.255.0
+no shutdown
+exit
+int Gig0/2
+ip address 192.168.30.1 255.255.255.0
+no shutdown
+exit
+//route configure
+//ip route destionation network address subnetmask next hop address 
+//jei rasta deya jabe ar ki router er maje oi raster address
+ip route 192.168.20.0 255.255.255.0 192.168.60.1
+ip route 192.168.10.0 255.255.255.0 192.168.40.1
+exit
+
+

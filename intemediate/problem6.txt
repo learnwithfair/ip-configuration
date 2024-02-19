@@ -1,0 +1,88 @@
+
+//// First Switch Configuration
+en
+configure terminal
+VLAN 10
+name ICE
+exit 
+VLAN 20
+name CES
+exit
+VLAN 30
+name ETE
+exit
+VLAN 40
+name EEE
+exit
+exit
+show VLAN brief
+configure terminal 
+interface fastEthernet 0/1
+switchport access VLAN 10
+exit
+interface fastEthernet 0/2
+switchport access VLAN 10
+exit
+interface fastEthernet 0/3
+switchport access VLAN 20
+exit
+interface fastEthernet 0/4
+switchport access VLAN 30
+exit
+interface fastEthernet 0/5
+switchport access VLAN 40
+exit
+interface fastEthernet 0/6
+switchport access VLAN 40
+exit
+exit
+show VLAN brief
+
+//// Second Switch Configuration
+en
+configure terminal
+VLAN 10
+name IT
+exit 
+VLAN 20
+name HR
+exit
+exit
+show VLAN brief
+configure terminal 
+interface fastEthernet 0/1
+switchport access VLAN 10
+exit
+interface fastEthernet 0/2
+switchport access VLAN 10
+exit
+interface fastEthernet 0/3
+switchport access VLAN 20
+exit
+interface fastEthernet 0/4
+switchport access VLAN 20
+exit
+exit
+show VLAN brief
+
+##### VLAN Configuration
+en
+configure terminal
+interface fastEthernet 0/7
+switchport mode trunk
+exit
+interface range fastEthernet 0/1-fastEthernet 0/6
+switch mode access
+exit
+
+
+
+##### Switch To Switch Configuration
+en
+configure terminal
+interface fastEthernet 0/10
+switchport mode trunk
+exit
+interface fastEthernet 0/7
+switchport mode trunk
+exit
